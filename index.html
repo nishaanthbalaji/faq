@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="faq" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@500&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    #start {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    #head {
+      font-size: 60px;
+      font-family: "Dancing Script", cursive;
+      font-family: "Poppins", sans-serif;
+      font-family: "Sacramento", cursive;
+      font-weight: bolder;
+      color: goldenrod;
+    }
+    .wrapper {
+      /* width: 75%; */
+      margin-left: 350px;
+      margin-right: 350px;
+    }
+    .accordian {
+      cursor: pointer;
+      background-color: white;
+      opacity: 0.8;
+      width: 100%;
+      font-size: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border: none;
+      outline: none;
+      transition: 0.9s;
+      /* outline: none; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    .pannel {
+      /* margin-top: 10px; */
+      margin-bottom: 10px;
+    }
+    i {
+      font-size: 30px;
+    }
+    .accordian:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .pannel {
+      font-size: 20px;
+      opacity: 0.8;
+      padding: 0 18px 25px 18px;
+      background-color: rgba(0, 0, 0, 0.04);
+      display: none;
+    }
+    .faq {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      margin: 10px 0px;
+    }
+    .active {
+      border: none;
+      background-color: white;
+    }
+  </style>
+  <body>
+    <section id="start">
+      <div id="head">General Questions</div>
+    </section>
+    <section class="wrapper">
+      <div class="faq">
+        <button class="accordian ii">
+          Do you Accept All Major Credit Cards?<i
+            class="fa-solid fa-angle-down"
+          ></i>
+        </button>
+
+        <div class="pannel">
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+            earum dolorum repellat assumenda dolorem incidunt repudiandae nulla
+            ipsam ea dolore veniam cum, deserunt autem tempore iure, vel modi
+            quam iste?
+          </p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <button class="accordian ii">
+          Do You Support Local Farmers? <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <div class="pannel">
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+            earum dolorum repellat assumenda dolorem incidunt repudiandae nulla
+            ipsam ea dolore veniam cum, deserunt autem tempore iure, vel modi
+            quam iste?
+          </p>
+        </div>
+      </div>
+      <div class="faq">
+        <button class="accordian ii">
+          Do You Use Organic Ingredients? <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <div class="pannel">
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+            earum dolorum repellat assumenda dolorem incidunt repudiandae nulla
+            ipsam ea dolore veniam cum, deserunt autem tempore iure, vel modi
+            quam iste?
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      let acc = document.querySelectorAll(".accordian");
+      console.log(acc);
+      let i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          // let but = document.querySelector(".ii");
+          console.log(this.classList);
+          // this.classList.toggle("active");
+          this.parentElement.classList.toggle("active");
+
+          let pan = this.nextElementSibling;
+          console.log(pan);
+          if (pan.style.display === "block") {
+            pan.style.display = "none";
+          } else {
+            pan.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
